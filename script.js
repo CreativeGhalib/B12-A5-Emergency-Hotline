@@ -6,7 +6,7 @@ const updateHeartCounter = () => {
     heartNav.innerText = currentHeartValue + 1;
   }
 };
-// Attached Event Listeners to Heart Buttons
+//Event Listeners to Heart Buttons
 const heartButtonIds = [
   "heart-one",
   "heart-two",
@@ -19,7 +19,7 @@ const heartButtonIds = [
   "heart-nine",
 ];
 
-// Function to handle all heart button clicks dynamically
+// Handle all heart button
 const handleHeartButtonClicks = () => {
   heartButtonIds.forEach((buttonId) => {
     const button = document.getElementById(buttonId);
@@ -29,7 +29,7 @@ const handleHeartButtonClicks = () => {
   });
 };
 
-// Copy to Clipboard Function - Gives Feedback to the User
+// Copy to Clipboard Function
 const copyToClipboard = async (text, serviceName) => {
   try {
     await navigator.clipboard.writeText(text);
@@ -42,11 +42,11 @@ const copyToClipboard = async (text, serviceName) => {
   }
 };
 
-// Count বাটনের সংখ্যা বাড়ানোর ফাংশন (নতুন যোগ করা)
+// Count
 function increaseCopyCount() {
   const btn = document.getElementById('copyCounterBtn');
   if (btn) {
-    // 'Count 1' বা 'Count&nbsp;1' থেকে সংখ্যা বের করে ১ বাড়ান
+    // 'Count 1'
     const match = btn.innerHTML.match(/Count(?:&nbsp;|\s)(\d+)/);
     let current = 1;
     if (match && match[1]) {
@@ -57,7 +57,7 @@ function increaseCopyCount() {
   }
 }
 
-// Copy Button Setup - Configures each button to copy the relevant phone number
+// Copy Button Setup
 const copyButtonConfigurations = [
   {
     buttonId: "copy-one",
@@ -98,7 +98,7 @@ const copyButtonConfigurations = [
   },
 ];
 
-// Dynamically attach event listeners to copy buttons
+// Event listeners for copy buttons
 const initializeCopyButtons = () => {
   copyButtonConfigurations.forEach((config) => {
     const button = document.getElementById(config.buttonId);
@@ -109,20 +109,20 @@ const initializeCopyButtons = () => {
         ).innerText;
         copyToClipboard(numberToCopy, config.serviceName); // Triggers the copy action
 
-        // প্রতি কপি ক্লিকে Count বাটনের সংখ্যা বাড়ান (নতুন যুক্ত)
+        // Increasing count
         increaseCopyCount();
       });
     }
   });
 };
 
-// Coin Management System - Handles the logic for coin deduction
+// Coin Management System
 const manageCoinBalance = () => {
   const navCoin = document.getElementById("nav-coin");
   if (navCoin) {
     const currentCoinBalance = parseInt(navCoin.innerText);
 
-    // Check if the user has sufficient coins (20 or more)
+    // Checking coins
     if (currentCoinBalance >= 20) {
       navCoin.innerText = currentCoinBalance - 20; // Deduct coins after a successful call
       return true;
@@ -137,7 +137,7 @@ const manageCoinBalance = () => {
   return false;
 };
 
-// Create an Entry in the Call History Section with Service Name and Number
+// Creating Entry in the Call History Section
 const addToCallHistory = (serviceName, serviceNumber) => {
   const callHistorySection = document.getElementById("aside-items");
   if (callHistorySection) {
@@ -159,7 +159,7 @@ const addToCallHistory = (serviceName, serviceNumber) => {
   }
 };
 
-// Call Button Configurations - Defines each call button's behavior
+// Call button Configurations
 const callButtonConfigurations = [
   {
     buttonId: "call-one",
@@ -217,7 +217,7 @@ const callButtonConfigurations = [
   },
 ];
 
-// Call Button Event Listeners - Attach the event listeners to all call buttons
+// Call Button Event Listeners
 const initializeCallButtons = () => {
   callButtonConfigurations.forEach((config) => {
     const button = document.getElementById(config.buttonId);
@@ -233,7 +233,7 @@ const initializeCallButtons = () => {
   });
 };
 
-// Clear Call History - Clears all call history entries
+// Clear Call History
 const clearCallHistory = () => {
   const clearHistoryButton = document.getElementById("clear-btn");
 
@@ -256,5 +256,5 @@ const initializeApp = () => {
   clearCallHistory(); // Enable clear call history functionality
 };
 
-// Run initialization once the DOM is loaded
+// Run initialization DOM
 document.addEventListener("DOMContentLoaded", initializeApp);
