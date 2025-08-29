@@ -31,12 +31,12 @@
     </style>
 </head>
 
-<body class="bg-gray-50 font-roboto">
+<body class="bg-gray-50 font-roboto max-w-[1920px] max-h-[1613px]">
     <!-- Navigation/Header -->
     <header class="bg-white shadow-sm">
         <nav
             class="container mx-auto flex flex-wrap justify-between items-center gap-5 md:gap-20 lg:gap-80 xl:gap-120 px-4 py-5">
-            <!-- Logo + Title -->
+            <!-- Logo + title -->
             <div class="mx-auto flex flex-cols items-center md:flex-row gap-4">
                 <img class="w-18" src="./assets/logo.png" alt="BD Govt Logo">
                 <h1 class="text-green-800 text-[20px] font-bold">
@@ -75,3 +75,277 @@
                 উদ্যোগ</p>
         </section>
     </header>
+<!-- Main content -->
+    <main class="py-8">
+        <section
+            class="container mx-auto w-11/12 mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 xl:grid-cols-4 xl:gap-6">
+            <!-- Emergency service cards (Grid) -->
+            <div
+                class="mx-auto grid grid-cols-1 md:grid-cols-2 md:col-span-2 gap-6 lg:grid-cols-3 lg:col-span-3 xl:grid-cols-3 xl:col-span-3">
+                <!-- ১. National Emergency -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="bg-[#FFE3E2] p-3 w-14 rounded-2xl" src="./assets/emergency.png"
+                            alt="National Emergency">
+                        <button
+                            class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                            id="heart-one">
+                            <!-- Heart SVG -->
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">জাতীয় জরুরি নম্বর</h3>
+                    <p class="text-base text-gray-600">National Emergency</p>
+                    <h4 id="national-num" class="text-xl font-bold mt-3 text-green-600">999</h4>
+                    <span
+                        class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mb-3">All</span>
+                    <div class="flex gap-3">
+                        <button id="copy-one"
+                            class="btn btn-neutral btn-outline px-12 w-[47%] text-lg hover:bg-gray-100">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-one"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+                <!-- ২. Police Helpline -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="p-3 w-14 rounded-2xl bg-[#DFEFFF]" src="./assets/police.png" alt="Police">
+                        <button class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110"
+                            id="heart-two">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">পুলিশ হেল্পলাইন</h3>
+                    <p class="text-base text-gray-600">Police</p>
+                    <h4 id="police-num" class="text-xl font-bold mt-3 text-blue-600">999</h4>
+                    <span
+                        class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mb-3">Police</span>
+                    <div class="flex gap-3">
+                        <button id="copy-two" class="btn btn-neutral btn-outline px-10 w-[47%] text-lg">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-two"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+                <!-- ৩. Fire Service -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="bg-[#FFE3E2] p-3 w-14 rounded-2xl" src="./assets/fire-service.png"
+                            alt="Fire Service">
+                        <button
+                            class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                            id="heart-three">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">ফায়ার সার্ভিস</h3>
+                    <p class="text-base text-gray-600">Fire Service</p>
+                    <h4 id="fire-num" class="text-xl font-bold mt-3 text-red-600">999</h4>
+                    <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full mb-3">Fire</span>
+                    <div class="flex gap-3">
+                        <button id="copy-three" class="btn btn-neutral btn-outline px-10 w-[47%] text-lg">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-three"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+                <!-- ৪. Ambulance -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="bg-[#FFE3E2] p-3 w-14 rounded-2xl" src="./assets/ambulance.png" alt="Ambulance">
+                        <button
+                            class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                            id="heart-four">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">অ্যাম্বুলেন্স</h3>
+                    <p class="text-base text-gray-600">Ambulance</p>
+                    <h4 id="ambulance-num" class="text-xl font-bold mt-3 text-pink-600">1994-999999</h4>
+                    <span
+                        class="inline-block bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full mb-3">Health</span>
+                    <div class="flex gap-3">
+                        <button id="copy-four" class="btn btn-neutral btn-outline px-10 w-[47%] text-lg">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-four"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+                <!-- ৫. Women & Child Helpline -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="bg-[#FFE3E2] p-3 w-14 rounded-2xl" src="./assets/emergency.png"
+                            alt="Women Child Helpline">
+                        <button
+                            class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                            id="heart-five">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">নারী ও শিশু হেল্পলাইন</h3>
+                    <p class="text-base text-gray-600">Women & Child Helpline</p>
+                    <h4 id="help-num" class="text-xl font-bold mt-3 text-purple-600">109</h4>
+                    <span
+                        class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full mb-3">Help</span>
+                    <div class="flex gap-3">
+                        <button id="copy-five" class="btn btn-neutral btn-outline px-10 w-[47%] text-lg">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-five"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+                <!-- ৬. Anti-Corruption -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="bg-[#FFE3E2] p-3 w-14 rounded-2xl" src="./assets/emergency.png"
+                            alt="Anti Corruption">
+                        <button
+                            class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                            id="heart-six">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">দুর্নীতি দমন হেল্পলাইন</h3>
+                    <p class="text-base text-gray-600">Anti-Corruption</p>
+                    <h4 id="anti-corrpt-num" class="text-xl font-bold mt-3 text-orange-600">106</h4>
+                    <span
+                        class="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full mb-3">Govt.</span>
+                    <div class="flex gap-3">
+                        <button id="copy-six" class="btn btn-neutral btn-outline px-10 w-[47%] text-lg">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-six"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+                <!-- ৭. Electricity -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="bg-[#FFE3E2] p-3 w-14 rounded-2xl" src="./assets/emergency.png"
+                            alt="Electricity Service">
+                        <button
+                            class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                            id="heart-seven">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">বিদ্যুৎ হেল্পলাইন</h3>
+                    <p class="text-base text-gray-600">Electricity Outage</p>
+                    <h4 id="electricity-num" class="text-xl font-bold mt-3 text-yellow-600">16216</h4>
+                    <span
+                        class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full mb-3">Electricity</span>
+                    <div class="flex gap-3">
+                        <button id="copy-seven" class="btn btn-neutral btn-outline px-10 w-[47%] text-lg">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-seven"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+                <!-- ৮. BRAC -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="bg-[#FFE3E2] p-3 w-14 rounded-2xl" src="./assets/emergency.png" alt="BRAC Service">
+                        <button
+                            class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                            id="heart-eight">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">ব্র্যাক হেল্পলাইন</h3>
+                    <p class="text-base text-gray-600">Brac</p>
+                    <h4 id="brac-num" class="text-xl font-bold mt-3 text-teal-600">16445</h4>
+                    <span class="inline-block bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full mb-3">NGO</span>
+                    <div class="flex gap-3">
+                        <button id="copy-eight" class="btn btn-neutral btn-outline px-10 w-[47%] text-lg">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-eight"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+                <!-- ৯. Railway -->
+                <div class="max-w-lg md:max-w-full shadow-sm p-5 rounded-lg bg-white border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <img class="bg-[#FFE3E2] w-14 p-3 rounded-2xl" src="./assets/emergency.png"
+                            alt="Railway Service">
+                        <button
+                            class="text-3xl bg-white p-1 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                            id="heart-nine">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 4.5C18.706 4.5 20.5 6.294 20.5 8.5C20.5 13.169 14.957 17.441 12 19.523C9.043 17.441 3.5 13.169 3.5 8.5C3.5 6.294 5.294 4.5 7.5 4.5C8.14231 4.50145 8.77487 4.65716 9.34445 4.95405C9.91403 5.25093 10.404 5.68029 10.773 6.206L12 7.953L13.227 6.207C13.5959 5.68111 14.0858 5.25155 14.6554 4.95449C15.225 4.65743 15.8576 4.50156 16.5 4.5ZM16.5 3C15.6167 2.99987 14.7464 3.21288 13.963 3.62095C13.1796 4.02902 12.5062 4.6201 12 5.344C11.4938 4.6201 10.8204 4.02902 10.037 3.62095C9.25363 3.21288 8.38332 2.99987 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 14.219 8.5 18.938 12 21.35C15.5 18.938 22 14.219 22 8.5C22 7.77773 21.8577 7.06253 21.5813 6.39524C21.3049 5.72795 20.8998 5.12163 20.3891 4.61091C19.8784 4.10019 19.2721 3.69506 18.6048 3.41866C17.9375 3.14226 17.2223 3 16.5 3Z"
+                                    fill="#5C5C5C" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold pt-2">রেলওয়ে হেল্পলাইন</h3>
+                    <p class="text-base text-gray-600">Bangladesh Railway</p>
+                    <h4 id="railway-num" class="text-xl font-bold mt-3 text-indigo-600">163</h4>
+                    <span
+                        class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full mb-3">Travel</span>
+                    <div class="flex gap-3">
+                        <button id="copy-nine" class="btn btn-neutral btn-outline px-10 w-[47%] text-lg">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                        <button id="call-nine"
+                            class="btn btn-success w-[47%] bg-green-500 text-white px-12 text-lg hover:bg-green-600">
+                            <i class="fa-solid fa-phone"></i> কল
+                        </button>
+                    </div>
+                </div>
+            </div>
