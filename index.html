@@ -31,7 +31,8 @@
     </style>
 </head>
 
-<body class="bg-gray-50 font-roboto max-w-[1920px] max-h-[1613px]">
+<body class="bg-gray-50 font-roboto ">
+
     <!-- Navigation/Header -->
     <header class="bg-white shadow-sm">
         <nav
@@ -56,12 +57,11 @@
                     <img class="w-8" src="./assets/coin.png" alt="coin">
                 </div>
                 <!-- Click button badge -->
-                <div class="flex justify-center items-center h-12 w-20 md:w-32 rounded-full bg-[#00A63E] p-3">
-                    <button
-                        class="flex justify-center items-center gap-2 rounded-full h-12 px-9 font-bold text-white bg-[#00A63E] hover:bg-[#008C2D]">
-                        ClickMe
-                    </button>
-                </div>
+            <div class="flex justify-center items-center h-12 w-20 md:w-32 rounded-full bg-[#00A63E] p-3">
+                <button id="copyCounterBtn"
+                    class="flex justify-center items-center gap-2 rounded-full h-12 px-9 font-bold text-white bg-[#00A63E] hover:bg-[#008C2D]">
+                    Count&nbsp;1
+                </button>
             </div>
         </nav>
 <!-- Hero Banner -->
@@ -105,7 +105,7 @@
                         class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mb-3">All</span>
                     <div class="flex gap-3">
                         <button id="copy-one"
-                            class="btn btn-neutral btn-outline px-12 w-[47%] text-lg hover:bg-gray-100">
+                            class="btn btn-neutral btn-outline px-12 w-[47%] text-lg hover:bg-black-100">
                             <i class="fa-solid fa-copy"></i> কপি
                         </button>
                         <button id="call-one"

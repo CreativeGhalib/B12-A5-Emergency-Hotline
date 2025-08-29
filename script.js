@@ -42,6 +42,21 @@ const copyToClipboard = async (text, serviceName) => {
   }
 };
 
+// Count বাটনের সংখ্যা বাড়ানোর ফাংশন (নতুন যোগ করা)
+function increaseCopyCount() {
+  const btn = document.getElementById('copyCounterBtn');
+  if (btn) {
+    // 'Count 1' বা 'Count&nbsp;1' থেকে সংখ্যা বের করে ১ বাড়ান
+    const match = btn.innerHTML.match(/Count(?:&nbsp;|\s)(\d+)/);
+    let current = 1;
+    if (match && match[1]) {
+      current = parseInt(match[1]);
+    }
+    current++;
+    btn.innerHTML = `Count&nbsp;${current}`;
+  }
+}
+
 // Copy Button Setup - Configures each button to copy the relevant phone number
 const copyButtonConfigurations = [
   {
@@ -93,6 +108,9 @@ const initializeCopyButtons = () => {
           config.textElementId
         ).innerText;
         copyToClipboard(numberToCopy, config.serviceName); // Triggers the copy action
+
+        // প্রতি কপি ক্লিকে Count বাটনের সংখ্যা বাড়ান (নতুন যুক্ত)
+        increaseCopyCount();
       });
     }
   });
